@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sai Kyaw Swa — Portfolio</title>
+<meta name="description" content="Portfolio, achievements, resume, skills, testimonials, and contact for Sai Kyaw Swa." />
+<meta property="og:title" content="Sai Kyaw Swa — Portfolio" />
+<meta property="og:description" content="Project & Ops management that delivers clarity, speed, and results." />
+<meta property="og:type" content="website" />
+<meta name="theme-color" content="#0b1e3a" />
+<style>
+  :root{
+    --skin:#f3e6da;
+    --blood:#c62828;
+    --blue:#0b1e3a;
+    --grey:#6b7280;
+    --ink:#0c1220;
+    --bg:#f8fafc;
+    --card:#ffffff;
+    --muted:#7b8496;
+
+    --radius:16px;
+    --shadow:0 12px 30px rgba(8,18,40,.12);
+    --shadow-sm:0 8px 20px rgba(8,18,40,.08);
+    --ring:0 0 0 4px rgba(198,40,40,.18);
+
+    --max:1100px;
+    --padY:40px;
+    --gap:16px;
+  }
+
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif}
+  img{max-width:100%;display:block}
+  a{color:var(--blue);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:var(--max);margin:auto;padding:0 24px}
+
+  header.site{position:sticky;top:0;z-index:50;background:linear-gradient(145deg, #f6f8fb, var(--skin) 130%);border-bottom:1px solid rgba(0,0,0,.06);backdrop-filter:saturate(1.2) blur(6px)}
+  nav{display:flex;align-items:center;justify-content:space-between;padding:10px 0}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--blue)}
+  .logo .dot{width:12px;height:12px;border-radius:999px;background:conic-gradient(from 45deg, var(--blood), var(--skin), var(--blue));box-shadow:0 0 0 3px rgba(12,18,32,.06)}
+  .navlinks{display:flex;gap:6px;flex-wrap:wrap}
+  .navlinks a{padding:8px 12px;border-radius:10px;color:var(--blue);font-weight:600}
+  .navlinks a.active,.navlinks a:hover{background:#eef2f8}
+
+  .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:center;padding:18px 0}
+  .chip{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px;background:rgba(198,40,40,.08);color:var(--blood);font-weight:700;font-size:.9rem}
+  h1{font-size:clamp(28px,4vw,44px);line-height:1.12;margin:10px 0}
+  .tagline{color:var(--grey);max-width:60ch}
+  .cta{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:11px 14px;border-radius:12px;border:1px solid rgba(0,0,0,.08);background:var(--card);box-shadow:var(--shadow-sm);font-weight:700;color:var(--blue)}
+  .btn.primary{background:linear-gradient(135deg, var(--blood), #e74646);color:#fff;border:none}
+  .btn.ghost{background:#f3f6fb}
+  .avatar{width:210px;height:210px;border-radius:22px;overflow:hidden;border:8px solid #fff;box-shadow:0 18px 60px rgba(11,30,58,.18)}
+  .hero-right{justify-self:center}
+
+  section{scroll-margin-top:90px}
+  .section{padding:var(--padY) 0;border-top:1px solid rgba(0,0,0,.06)}
+  .section h2{font-size:clamp(22px,3vw,28px);margin:0 0 12px 0}
+  .muted{color:var(--muted)}
+
+  .logos{display:grid;grid-template-columns:repeat(12,1fr);gap:14px;align-items:center}
+  .logo-card{grid-column:span 4;background:var(--card);border:1px solid rgba(0,0,0,.06);border-radius:14px;padding:10px;display:flex;align-items:center;gap:12px;box-shadow:var(--shadow-sm)}
+  .logo-img{width:42px;height:42px;border-radius:10px;object-fit:contain;background:#fff;border:1px solid #eef2f8;flex:0 0 42px;padding:4px}
+  .logo-card small{color:var(--muted)}
+
+  .cards{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+  .card{grid-column:span 6;background:var(--card);border:1px solid rgba(0,0,0,.06);border-radius:16px;padding:18px;box-shadow:var(--shadow-sm)}
+  .card:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+  .project-cover{border-radius:12px;aspect-ratio:16/9;background:linear-gradient(135deg,#eef3ff,#f7fafc);display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--blue);margin-bottom:8px}
+  .pill{padding:6px 10px;border-radius:999px;background:#f1f5f9;border:1px solid #e5eaf1;font-size:.85rem;display:inline-block;margin-right:6px;margin-top:6px}
+
+  .timeline{position:relative;margin-top:6px}
+  .timeline::before{content:"";position:absolute;left:14px;top:0;bottom:0;width:3px;background:linear-gradient(var(--blood), var(--blue));border-radius:3px;opacity:.2}
+  .mile{position:relative;padding-left:42px;margin:11px 0}
+  .mile::before{content:"";position:absolute;left:6px;top:6px;width:16px;height:16px;border-radius:50%;background:var(--blood);box-shadow:0 0 0 3px #fff, 0 0 0 6px rgba(198,40,40,.18)}
+  .mile strong{color:var(--blue)}
+  .kpi{display:inline-block;margin-top:6px;padding:4px 8px;border-radius:999px;background:rgba(11,30,58,.06);font-size:.85rem;color:var(--blue);font-weight:700}
+  .kpi.red{background:rgba(198,40,40,.10);color:var(--blood)}
+  .kpi.skin{background:rgba(243,230,218,.7);color:#8a5b3a}
+
+  .bar{height:10px;border-radius:999px;background:#e6ecf3;overflow:hidden}
+  .bar > span{display:block;height:100%;background:linear-gradient(90deg, var(--blood), #e74646);border-radius:999px}
+
+  .skills{display:flex;flex-wrap:wrap;gap:8px}
+  .skills .pill{background:rgba(11,30,58,.06);border:none;color:var(--blue);font-weight:700}
+
+  .footer{padding:18px 0 28px 0;color:var(--muted);font-size:.95rem}
+
+  @media (max-width:900px){
+    .hero{grid-template-columns:1fr;gap:18px}
+    .hero-right{order:-1}
+    .cards .card, .logo-card{grid-column:1/-1}
+  }
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <nav>
+      <div class="logo"><span class="dot"></span><span>Sai Kyaw Swa</span></div>
+      <div class="navlinks" id="navlinks">
+        <a href="#about">About</a>
+        <a href="#brands">Companies</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#milestones">Milestones</a>
+        <a href="#skills">Skills</a>
+        <a href="#resume">Resume</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+    <div class="hero wrap">
+      <div>
+        <span class="chip">Open to Opportunities</span>
+        <h1>Sai Kyaw Swa</h1>
+        <p class="tagline">Project &amp; Ops management that delivers clarity, speed, and results.</p>
+        <div class="cta">
+          <a class="btn primary" href="#portfolio">View Portfolio</a>
+          <a class="btn ghost" href="https://www.linkedin.com/in/sai-kyaw-swa-56712861/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn" href="#contact">Contact</a>
+        </div>
+      </div>
+      <div class="hero-right">
+        <!-- Your photo embedded as base64 -->
+        <img class="avatar" src="DATA_URI_FOR_PHOTO" alt="Portrait of Sai Kyaw Swa" />
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- Companies -->
+  <section id="brands" class="section">
+    <div class="wrap">
+      <h2>Companies & Focus</h2>
+      <div class="logos">
+        <div class="logo-card">
+          <img class="logo-img" src="DATA_URI_FOR_RECYGLO" alt="RecyGlo logo" />
+          <div><strong>Recyglo Thailand</strong><br/><small>Project Mgmt • ESG SaaS • Infra & UI</small></div>
+        </div>
+        <div class="logo-card">
+          <img class="logo-img" src="DATA_URI_FOR_KBZ" alt="KBZ Bank logo" />
+          <div><strong>KBZ Bank</strong><br/><small>Virtual Branch • NPS • Service Quality</small></div>
+        </div>
+        <div class="logo-card">
+          <img class="logo-img" src="DATA_URI_FOR_TELENOR" alt="Telenor logo" />
+          <div><strong>Telenor Myanmar</strong><br/><small>Ops & Training • SIM Reg • Call Center</small></div>
+        </div>
+        <div class="logo-card">
+          <img class="logo-img" src="DATA_URI_FOR_AGRASTAR" alt="Agrastar logo" />
+          <div><strong>Agrastar</strong><br/><small>S&OP • SOP • KPI dashboards</small></div>
+        </div>
+        <div class="logo-card">
+          <img class="logo-img" src="DATA_URI_FOR_TEACLY" alt="Teacly logo" />
+          <div><strong>Ley Choon Group / Teacly</strong><br/><small>Project Coordination • Sewerage Rehab</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- More sections (About, Portfolio, Milestones, Skills, Resume, Contact) here -->
+  <!-- I replaced the base64 blobs with placeholders (DATA_URI_FOR_...). -->
+
+</main>
+
+<footer class="wrap footer">
+  <div>© <span id="year"></span> Sai Kyaw Swa. All rights reserved.</div>
+</footer>
+
+<script>
+  const sections = [...document.querySelectorAll('section')];
+  const links = [...document.querySelectorAll('#navlinks a')];
+  const linkFor = id => document.querySelector(`#navlinks a[href="#${id}"]`);
+  const obs = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ links.forEach(a=>a.classList.remove('active')); const a = linkFor(e.target.id); if(a) a.classList.add('active'); } });
+  }, {rootMargin:"-40% 0px -55% 0px", threshold:0});
+  sections.forEach(s=>obs.observe(s));
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
